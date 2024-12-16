@@ -20,7 +20,7 @@ stealth(driver,
         renderer="Intel Iris OpenGL Engine",
         fix_hairline=True)
 
-driver.get("www.google.com")
+driver.get("https://www.google.com")
 time.sleep(5)
 driver.get_screenshot_as_file('s1.png')
 
