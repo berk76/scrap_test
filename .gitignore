@@ -1,0 +1,12 @@
+# General
+venv/
+*~
+
+# IDE
+.idea/
+
+# Django
+__pycache__/
+*.log
+*.pot
+*.pyc

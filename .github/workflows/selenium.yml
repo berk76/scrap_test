@@ -1,0 +1,43 @@
+name: selenium
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: 131
+        install-chromedriver: true
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: "pip"
+
+    - name: Install Dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run test
+      run: |
+        source venv/bin/activate
+        python scraper.py
+
+    - name: Archive screen shots
+      uses: actions/upload-artifact@v4
+      with:
+        name: Screenshots
+        path: ./*.png
+        
