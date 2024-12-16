@@ -20,7 +20,7 @@ stealth(driver,
         renderer="Intel Iris OpenGL Engine",
         fix_hairline=True)
 
-driver.get("https://www.google.com")
+driver.get("https://www.dhl.com/cz-cs/home/tracking/tracking-global-forwarding.html?submit=1&tracking-id=123456")
 time.sleep(5)
 driver.get_screenshot_as_file('s1.png')
 
