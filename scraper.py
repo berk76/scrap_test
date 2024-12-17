@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium_stealth import stealth
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 import time
 
 
@@ -22,7 +23,7 @@ stealth(driver,
 
 driver.get("https://www.dhl.com/cz-cs/home/tracking/tracking-global-forwarding.html")
 driver.get_screenshot_as_file('s1.png')
-inputElement = driver.find_element("c-tracking--input")
+inputElement = driver.find_element(by=By.ID, value='c-tracking--input')
 inputElement.send_keys('12345')
 driver.get_screenshot_as_file('s2.png')
 inputElement.submit() 
