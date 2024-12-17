@@ -22,7 +22,7 @@ stealth(driver,
 
 driver.get("https://www.dhl.com/cz-cs/home/tracking/tracking-global-forwarding.html")
 driver.get_screenshot_as_file('s1.png')
-inputElement = driver.find_element_by_id("c-tracking--input")
+inputElement = driver.find_element("c-tracking--input")
 inputElement.send_keys('12345')
 driver.get_screenshot_as_file('s2.png')
 inputElement.submit() 
