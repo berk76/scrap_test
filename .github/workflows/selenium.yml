@@ -14,7 +14,7 @@ jobs:
 
     - uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: 131
+        chrome-version: 132
         install-chromedriver: true
 
     - name: Set up Python
